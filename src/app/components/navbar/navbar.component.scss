@@ -1,0 +1,38 @@
+.fix-header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+.hamburger{
+  font-size: 2rem;
+  transition: 0.1s;
+}
+.navItems{
+  display: none;
+}
+.container-sliding{
+  position: absolute;
+  top: 30%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+h2{
+  font-family: "Work Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+@media (min-width: 700px) {
+  .hamburger{
+    display: none;
+  }
+  .navItems{
+    display: flex;
+  }
+}

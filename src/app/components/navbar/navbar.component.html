@@ -1,1 +1,58 @@
-<p>navbar works!</p>
+<header
+  class="py-4 px-4 md:px-16"
+  [ngClass]="{ 'fix-header': showSlidingPanel }"
+>
+  <nav class="flex items-center">
+    <a href="/" class="flex items-center">
+      <div>
+        <img
+          elementtiming="nbf-header-logo-desktop"
+          src="https://static.wixstatic.com/media/56da82_535a28773dc6428e9532d35aaf87fa4c~mv2.png/v1/fill/w_58,h_59,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Favicon_edited.png"
+          alt="Khepri, Coffee + Scratch Kitchen"
+          style="display: block"
+          fetchpriority="high"
+          loading="eager"
+          decoding="async"
+          data-loader="raw"
+          class="w-12"
+        />
+      </div>
+      <h2 class="text-xl sm:text-2xl">Pupkitt Pet Care</h2>
+    </a>
+    <div class="ms-auto navItems">
+      <ul class="flex gap-8 items-center">
+        <li class="hover:bg-[#E0DCC7] xl:p-4 cursor-pointer">Sobre nosotros</li>
+        <li class="hover:bg-[#E0DCC7] xl:p-4 cursor-pointer">Nuestros doctores
+        </li>
+        <li class="hover:bg-[#E0DCC7] xl:p-4 cursor-pointer">Servicios</li>
+        <li class="hover:bg-[#E0DCC7] xl:p-4 cursor-pointer">Recursos</li>
+        <li class="hover:bg-[#E0DCC7] xl:p-4 cursor-pointer">Más</li>
+        <a href="tel:+543462680563" class="bg-[#3A54B4] text-white hidden xl:block p-4 cursor-pointer">+54 3462 680563</a>
+      </ul>
+    </div>
+    <div class="hamburger ms-auto" (click)="toggleSlidingPanel()">
+      <span
+        [ngClass]="{
+          'icon-[radix-icons--hamburger-menu]': !showSlidingPanel,
+          'icon-[ph--x-light]': showSlidingPanel
+        }"
+        class="icon-[radix-icons--hamburger-menu]"
+        role="img"
+        aria-hidden="true"
+      ></span>
+    </div>
+    @if(showSlidingPanel){
+    <div class="container-sliding">
+      <ul class="flex flex-col gap-16 cursor-pointer text-4xl text-center">
+        <li>Sobre nosotros</li>
+        <li>Nuestros doctores
+        </li>
+        <li>Servicios</li>
+        <li>Recursos</li>
+        <li>Más</li>
+        <a href="tel:+543462680563" class="bg-[#3A54B4] text-white xl:p-4 cursor-pointer">+54 3462 680563</a>
+      </ul>
+    </div>
+    }
+  </nav>
+</header>
